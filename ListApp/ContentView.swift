@@ -10,9 +10,19 @@ import SwiftUI
 
 struct ContentView : View {
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Garden of the Gods")
-                .font(.title)
+        VStack {
+
+            MapView()
+                .edgesIgnoringSafeArea(.top)
+                .frame(height: 300)
+
+            CircleImage()
+                .offset(y: -130)
+                .padding(.bottom, -130)
+
+            VStack(alignment: .leading) {
+                Text("Garden of the Gods")
+                    .font(.title)
                 HStack {
                     HStack {
                         Text("Colorado Springs")
@@ -22,8 +32,11 @@ struct ContentView : View {
                             .font(.subheadline)
                     }
                 }
+                }
+                .padding()
+
+            Spacer()
         }
-        .padding()
     }
 }
 
